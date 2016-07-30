@@ -1,0 +1,10 @@
+---
+
+- hosts: site
+  become: yes
+  become_user: root
+  roles:
+    - { role: common, tags: [common] }
+    - { role: node-js, tags: [node-js] }
+    - { role: pm2, tags: [pm2] }
+    - { role: nginx, tags: [ nginx ]}

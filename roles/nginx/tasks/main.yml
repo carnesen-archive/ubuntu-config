@@ -1,0 +1,13 @@
+---
+
+- name: Install nginx
+  apt: name=nginx state=present
+
+- name: Copy over main nginx configuration file
+  copy: src=nginx.conf dest=/etc/nginx/ mode=644
+
+- name: Copy over http configuration file
+  template: src=http.conf dest=/etc/nginx/conf.d/ mode=0644
+
+- name: Ensure nginx is running now and on reboot
+  service: name=nginx state=reloaded enabled=yes

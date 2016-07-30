@@ -1,0 +1,5 @@
+# WebStorm project folder
+.idea
+
+# Vagrant virtual machine files
+.vagrant

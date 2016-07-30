@@ -1,0 +1,2 @@
+127.0.0.1 localhost
+{{ ansible_all_ipv4_addresses[-1] }} {{ ansible_hostname }}.{{ domain }} {{ ansible_hostname }}

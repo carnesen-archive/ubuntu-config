@@ -1,0 +1,10 @@
+---
+
+- name: Create user "{{ username }}"
+  user: name={{ username }} state=present shell=/bin/bash
+
+- name: Configure bash {{ username }}'s and define aliases in ~/.bashrc
+  copy: src=bashrc.sh dest=~{{ username }}/.bashrc
+
+- name: Source ~/.bashrc in {{ username }}'s ~/.profile
+  copy: src=profile.sh dest=~{{ username }}/.profile

@@ -1,0 +1,7 @@
+---
+
+- apt: name=parted state=present update_cache=yes
+
+- script: format-xvdx.sh {{ drive_letter }}
+
+- mount: fstype=ext4 name={{ dataDir }} src=/dev/xvd{{ drive_letter }}1 state=mounted

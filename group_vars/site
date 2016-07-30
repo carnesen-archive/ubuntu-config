@@ -1,0 +1,9 @@
+---
+
+domain: us-west-2.compute.internal
+
+service_user: node
+
+dataDir: /data
+
+port: 30000

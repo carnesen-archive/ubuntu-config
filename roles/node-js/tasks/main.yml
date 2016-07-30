@@ -1,0 +1,12 @@
+---
+
+- name: Install build tools for compiling native addons
+  apt: name=build-essential
+
+- name: Download Node.js tarball from nodejs.org
+  get_url: url=http://nodejs.org/dist/v{{ version }}/node-v{{ version }}-linux-x64.tar.gz
+           dest=/usr/local/downloads/
+
+- name: Unpack Node.js tarball to /usr/local
+  command: tar --strip-components 1 -xzvf node-v{{ version }}-linux-x64.tar.gz --directory=/usr/local
+           chdir=/usr/local/downloads/
