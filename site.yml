@@ -7,4 +7,6 @@
     - { role: common, tags: [common] }
     - { role: node-js, tags: [node-js] }
     - { role: pm2, tags: [pm2] }
-    - { role: nginx, tags: [ nginx ]}
+    - { role: nginx, tags: [nginx]}
+    - { role: www, tags: [www]}
+    - { role: mathjs-app, tags: [mathjs], become_user: "{{ service_user }}"}

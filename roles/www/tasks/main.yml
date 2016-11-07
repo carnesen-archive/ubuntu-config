@@ -1,0 +1,5 @@
+---
+
+- name: npm install @carnesen/www
+  npm: name=@carnesen/www production=yes state=latest path=/var/www
+

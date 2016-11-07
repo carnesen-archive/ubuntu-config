@@ -1,12 +1,9 @@
 ---
 
 - name: install pm2 process manager globally
-  npm: name=pm2 global=yes version=1.1.3 state=present
+  npm: name=pm2 global=yes version=2.0.19 state=present
 
 - name: install pm2 as a service "pm2-init.sh"
-  shell: "pm2 startup ubuntu --user {{ service_user }} --hp ~{{ service_user }}"
+  shell: "pm2 startup systemd --user {{ service_user }} --hp ~{{ service_user }}"
   args:
-    creates: /etc/init.d/pm2-init.sh
-
-- name: start pm2 service and enable it to start on startup
-  service: name=pm2-init.sh state=started enabled=yes
+    creates: /etc/systemd/system/pm2.service

@@ -3,3 +3,9 @@
 
 # Vagrant virtual machine files
 .vagrant
+
+# ansible retry files
+*.retry
+
+# log files
+*.log

@@ -1,0 +1,13 @@
+---
+
+- name: npm install mathjs-app
+  npm: name=@carnesen/mathjs-app production=yes state=latest path=~
+
+- name: Start mathjs-app as pm2 process
+  shell: NODE_ENV=production pm2 start bin/www.js --name mathjs-app
+  args:
+    chdir: ~/node_modules/@carnesen/mathjs-app
+  ignore_errors: yes
+
+- name: Save pm2 processes for resurrection on reboot
+  command: pm2 save
