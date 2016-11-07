@@ -1,0 +1,15 @@
+---
+
+- name: Fetch monitoring agent auto-install script
+  get_url: url=https://repo.stackdriver.com/stack-install.sh
+           dest=/usr/local/downloads/stack-install.sh mode=755
+
+- name: Run monitoring agent auto-install script
+  command: /usr/local/downloads/stack-install.sh --write-gcm
+
+- name: Fetch stackdriver logging agent auto-install script
+  get_url: url=https://dl.google.com/cloudagents/install-logging-agent.sh
+           dest=/usr/local/downloads/install-logging-agent.sh mode=755
+
+- name: Run monitoring agent auto-install script
+  command: /usr/local/downloads/install-logging-agent.sh
